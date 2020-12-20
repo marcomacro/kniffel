@@ -81,11 +81,13 @@ function count_fullhouse($dices){
 }
 
 function count_small_street($dices){
-    return 30;
+    // echo "Recognized street length: ".get_street_length($dices)."<br>";
+    if (get_street_length($dices) > 3) return 30; else return 0;
 }
 
 function count_big_street($dices){
-    return 40;
+    // echo "Recognized street length: ".get_street_length($dices)."<br>";
+    if (get_street_length($dices) > 4) return 40; else return 0;
 }
 
 // dt.: Kniffel
@@ -115,6 +117,18 @@ function count_max_diced($dices) {
         $amounts[$value-1]++;
     }
     return max($amounts);
+}
+
+// returns the length of a potentially street
+function get_street_length($dices) {
+    $length = 1;
+    $pip = min($dices);
+    for ($i=0; $i<5; $i++) {
+        $pip++;
+        if (in_array($pip, $dices)) $length++; 
+        else break;
+    }
+    return $length;
 }
 
 ?>
