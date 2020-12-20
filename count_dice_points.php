@@ -1,5 +1,11 @@
 <?php
 
+/*
+This file is intended to count the points of the dices rolled, according to
+a certain, given category (ones, twos, ... , triple, small_street, ...) and 
+also validates if the condidions of that specific category were fullfilled.
+*/
+
 // I. upper block
 
 function count_ones($dices){
@@ -52,45 +58,46 @@ function count_sixs($dices){
 
 // II. lower block
 
-// Dreierpasch
-function triple($dices){
+// dt.: Dreierpasch
+function count_triple($dices){
     $result = 0;
-    if (maximum_diced($dices)>2) {
+    if (count_max_diced($dices)>2) {
         foreach ($dices as $value) $result += $value;
     }
     return $result;
 }
 
-// Viererpasch
-function foursome($dices){
+// dt.: Viererpasch
+function count_foursome($dices){
     $result = 0;
-    if (maximum_diced($dices)>3) {
+    if (count_max_diced($dices)>3) {
         foreach ($dices as $value) $result += $value;
     }
     return $result;
 }
 
-function fullhouse($dices){
+function count_fullhouse($dices){
     return 25;
 }
 
-function small_street($dices){
+function count_small_street($dices){
     return 30;
 }
 
-function big_street($dices){
+function count_big_street($dices){
     return 40;
 }
 
-function yahtzee($dices){
+// dt.: Kniffel
+function count_yahtzee($dices){
     $result = 50;
     for ($i=1; $i<count($dices); $i++){
         if ($dices[$i] != $dices[0]) $result = 0;
     }
     return $result;
 }
- 
-function chance($dices){
+
+function count_chance($dices){
     $result = 0;
     foreach ($dices as $value){
         $result += $value;
@@ -98,7 +105,11 @@ function chance($dices){
     return $result;
 }
 
-function maximum_diced($dices) {
+// III. helping  functions
+
+// determines which pips had been the most and returns the amount of occurences
+// intended to be used by count_triple(), count_foursome()
+function count_max_diced($dices) {
     $amounts = array(0, 0, 0, 0, 0, 0);
     foreach ($dices as $value){
         $amounts[$value-1]++;

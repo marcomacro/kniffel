@@ -65,32 +65,32 @@
 
             echo "<hr>";
             echo "<h2>II. Lower Block</h2>";
-            echo "<h3>Teste \"Dreierpasch zählen\" - function triple(..){..}</h3>";
-            echo triple($dices);
+            echo "<h3>Teste \"Dreierpasch zählen\" - function count_triple(..){..}</h3>";
+            echo count_triple($dices);
 
             echo "<hr>";
-            echo "<h3>Teste \"Viererpasch zählen\" - function foursome(..){..}</h3>";
-            echo foursome($dices);
+            echo "<h3>Teste \"Viererpasch zählen\" - function count_foursome(..){..}</h3>";
+            echo count_foursome($dices);
 
             echo "<hr>";
-            echo "<h3>Teste \"Full House zählen\" - function fullhouse(..){..}</h3>";
-            echo fullhouse($dices);
+            echo "<h3>Teste \"Full House zählen\" - function count_fullhouse(..){..}</h3>";
+            echo count_fullhouse($dices);
 
             echo "<hr>";
-            echo "<h3>Teste \"Kleine Straße zählen\" - function small_street(..){..}</h3>";
-            echo small_street($dices);
+            echo "<h3>Teste \"Kleine Straße zählen\" - function count_small_street(..){..}</h3>";
+            echo count_small_street($dices);
 
             echo "<hr>";
-            echo "<h3>Teste \"Große Straße zählen\" - function big_street(..){..}</h3>";
-            echo big_street($dices);
+            echo "<h3>Teste \"Große Straße zählen\" - function count_big_street(..){..}</h3>";
+            echo count_big_street($dices);
 
             echo "<hr>";
-            echo "<h3>Teste \"Kniffel zählen\" - function yahtzee(..){..}</h3>";
-            echo yahtzee($dices);
+            echo "<h3>Teste \"Kniffel zählen\" - function count_yahtzee(..){..}</h3>";
+            echo count_yahtzee($dices);
 
             echo "<hr>";
-            echo "<h3>Teste \"Chance zählen\" - function chance(..){..}</h3>";
-            echo chance($dices);
+            echo "<h3>Teste \"Chance zählen\" - function count_chance(..){..}</h3>";
+            echo count_chance($dices);
 
             echo "<hr>";
         }
