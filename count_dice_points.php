@@ -77,7 +77,9 @@ function count_foursome($dices){
 }
 
 function count_fullhouse($dices){
-    return 25;
+    $amounts = array(0, 0, 0, 0, 0);
+    foreach ($dices as $value) $amounts[$value-1]++;
+    if (in_array(2, $amounts) && max($amounts) == 3) return 25; else return 0;
 }
 
 function count_small_street($dices){
