@@ -28,6 +28,7 @@
         if(isset($_POST["test"])) {
             
             $dices = [$_POST["dice1"], $_POST["dice2"], $_POST["dice3"], $_POST["dice4"], $_POST["dice5"]];
+            for ($i=0; $i<5; $i++) if ($dices[$i]=="") $dices[$i] = rand(1,6);
             include "count_dice_points.php";
 
             echo "<hr>";
