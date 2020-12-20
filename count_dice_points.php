@@ -1,4 +1,5 @@
 <?php
+
 // I. upper block
 
 function count_ones($dices){
@@ -54,14 +55,18 @@ function count_sixs($dices){
 // Dreierpasch
 function triple($dices){
     $result = 0;
-    foreach ($dices as $value) $result += $value;
+    if (maximum_diced($dices)>2) {
+        foreach ($dices as $value) $result += $value;
+    }
     return $result;
 }
 
 // Viererpasch
 function foursome($dices){
     $result = 0;
-    foreach ($dices as $value) $result += $value;
+    if (maximum_diced($dices)>3) {
+        foreach ($dices as $value) $result += $value;
+    }
     return $result;
 }
 
@@ -78,15 +83,27 @@ function big_street($dices){
 }
 
 function yahtzee($dices){
-    return 50;
+    $result = 50;
+    for ($i=1; $i<count($dices); $i++){
+        if ($dices[$i] != $dices[0]) $result = 0;
+    }
+    return $result;
 }
-
+ 
 function chance($dices){
     $result = 0;
     foreach ($dices as $value){
         $result += $value;
     }
     return $result;
+}
+
+function maximum_diced($dices) {
+    $amounts = array(0, 0, 0, 0, 0, 0);
+    foreach ($dices as $value){
+        $amounts[$value-1]++;
+    }
+    return max($amounts);
 }
 
 ?>
