@@ -7,12 +7,7 @@ A small and simple implementation of the famous **Yahtzee** dice game, in german
 - https://en.wikipedia.org/wiki/Yahtzee
 - https://de.wikipedia.org/wiki/Kniffel
 
-The project will be based on HTML5 (CSS), PHP and a mySQL database, all running on XAMPP (MAMPP)
-
-Authors:
-
-- Amer Al'Munajjed
-- Marco Haderk
+Project based on HTML5 (CSS), PHP, mySQL
 
 ## Counting Points
 
